@@ -1,0 +1,13 @@
+third-party/qasmtools/*
+QuantumFlow/*
+build/*
+baseline/*
+tutorial1.py
+tutorial2.py
+tutorial4.py
+data/*
+inputs/*
+naive/*
+outputs/*
+/.vscode
+util/parser.hpp

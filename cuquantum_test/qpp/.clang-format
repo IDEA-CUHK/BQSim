@@ -1,0 +1,18 @@
+---
+Language: Cpp
+ColumnLimit: 80
+Standard: c++17
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+PointerAlignment: Left
+IndentCaseLabels: true
+AlwaysBreakTemplateDeclarations: Yes
+InsertBraces: true
+SortIncludes: true
+# system headers come first
+IncludeCategories:
+  - Regex: "^<.*>"
+    Priority: 1
+  - Regex: '^".*\.(h|hpp)"'
+    Priority: 2
