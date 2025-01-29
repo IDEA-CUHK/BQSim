@@ -1,7 +1,12 @@
-mkdir build/
-cd qpp/
+#!/bin/bash
+
+cd cuquantum_test/qpp/
 cmake -B build
 sudo cmake --build build --target install
-cd ../build/
+
+
+cd ../../
+mkdir build
+cd build/
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j9

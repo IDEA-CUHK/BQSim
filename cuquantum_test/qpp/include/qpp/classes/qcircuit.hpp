@@ -1610,23 +1610,23 @@ class QCircuit : public IDisplay, public IJSON {
           int num_ctrl = 0;
           double2 *mat;
           mat = (double2 *)malloc(sizeof(double2) * 4);
-          if (gate_step.ctrl_.has_value()) {
-            std::cout << "control here" << std::endl;
-            std::cout << gate_step.ctrl_.value()[0] <<std::endl;
-          }
-          if (gate_step.ctrl_.has_value()) {
-            // for (idx& elem : gate_step.ctrl_.value()) {
-            //     num_ctrl++;
-            //     if (num_ctrl > 1) {
-            //         // std::cout << gate_step.ctrl_[num_ctrl-1] << std::endl;
-            //         printf("[ERROR] More than 1 controls.\n");
-            //         exit(1);
-            //     }
-            //     ctrl_vec.push_back((int)elem);
-            // }
-            printf("[ERROR] More than 1 controls.\n");
-            // TODO
-          }
+        //   if (gate_step.ctrl_.has_value()) {
+        //     std::cout << "control here" << std::endl;
+        //     std::cout << gate_step.ctrl_.value()[0] <<std::endl;
+        //   }
+        //   if (gate_step.ctrl_.has_value()) {
+        //     // for (idx& elem : gate_step.ctrl_.value()) {
+        //     //     num_ctrl++;
+        //     //     if (num_ctrl > 1) {
+        //     //         // std::cout << gate_step.ctrl_[num_ctrl-1] << std::endl;
+        //     //         printf("[ERROR] More than 1 controls.\n");
+        //     //         exit(1);
+        //     //     }
+        //     //     ctrl_vec.push_back((int)elem);
+        //     // }
+        //     printf("[ERROR] More than 1 controls.\n");
+        //     // TODO
+        //   }
         //   else ctrl_vec.push_back(-1);
 
           int num_target = 0;

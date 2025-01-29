@@ -1,5 +1,4 @@
 .vscode/
-build.sh
 extern/taskflow/3rd-party/tbb/build/*
 *.log
 log/results/node/*.txt

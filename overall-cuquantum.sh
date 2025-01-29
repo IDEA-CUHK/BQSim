@@ -1,20 +1,20 @@
 #!/bin/bash
 
-cd build/cuquantum
-
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/dnn_n17.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/dnn_n19.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/dnn_n21.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/vqe_n12.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/vqe_n14.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/vqe_n16.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/portfolio_vqe_n16.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/portfolio_vqe_n17.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/portfolio_vqe_n18.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/graph_state_n16.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/graph_state_n18.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/graph_state_n20.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/tsp_n9.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/tsp_n16.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/routing_n6.qasm --num_batch 200 --conversion_type 2
-./BQSim --ps --pv --batch_size 256 --file ../../circuits/routing_n12.qasm --num_batch 200 --conversion_type 2
+cd build/cuquantum_test
+# Args: num_qubits, batchsize, num_batches, use_fused_gates: (0-no fusion, 1-qiskit fusion, 2-BQCS-aware fusion), and output_or_not (0 or 1)
+./cuquantum dnn 17 256 10 0 1
+./cuquantum dnn 19 256 10 0 1
+./cuquantum dnn 21 256 10 0 1 
+./cuquantum vqe 12 256 10 0 1
+./cuquantum vqe 14 256 10 0 1
+./cuquantum vqe 16 256 10 0 1
+./cuquantum portfolio_vqe 16 256 10 0 1
+./cuquantum portfolio_vqe 17 256 10 0 1
+./cuquantum portfolio_vqe 18 256 10 0 1
+./cuquantum graph_state 16 256 10 0 1
+./cuquantum graph_state 18 256 10 0 1
+./cuquantum graph_state 20 256 10 0 1
+./cuquantum tsp 9 256 10 0 1
+./cuquantum tsp 16 256 10 0 1
+./cuquantum routing 6 256 10 0 1
+./cuquantum routing 12 256 10 0 1
