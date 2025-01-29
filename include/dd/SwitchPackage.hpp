@@ -2330,17 +2330,16 @@ private:
         num_buf++;
       }
     }
-    // for (int i = 0; i < num_buf; i++) {
-    //     std::memset(z_real_vec[i], 0, sizeof(fp) * (offset1-offset0));
-    //     std::memset(z_imag_vec[i], 0, sizeof(fp) * (offset1-offset0));
-    // }
+    for (int i = 0; i < num_buf; i++) {
+        std::memset(z_real_vec[i], 0, sizeof(fp) * (offset1-offset0));
+        std::memset(z_imag_vec[i], 0, sizeof(fp) * (offset1-offset0));
+    }
 
     for (size_t i = 0; i < n_thread; i++) // parfor, task graph may apply to mitigate workload imbalance
     {
       threads.emplace_back([this, i, &x_vec, &y_real, &y_imag, &z_real_vec, &z_imag_vec, var, buf_indices,
         &yoffset_vec, seg_size, &fact_r_vec, &fact_i_vec, offset1, offset0]()
         { 
-
         DMAVTable<> dmav_table;
         for (size_t j = 0; j < x_vec[i].size(); j++)
         {
