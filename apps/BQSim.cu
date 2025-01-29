@@ -90,7 +90,7 @@ int main(int argc, char** argv) { // NOLINT(bugprone-exception-escape)
     if (vm.count("pv") > 0) {
         cuDoubleComplex* state_vector;
         state_vector = qbatchsim->getVector();
-        std::ofstream outputFile("../../log/results/state/bqsim_"+qbatchsim->getName()+".txt");
+        std::ofstream outputFile("../../log/results/state/qbsim_"+qbatchsim->getName()+".txt");
         if (outputFile.is_open()) {
             // Write the vector to the file
             for (size_t i = 0; i < qbatchsim->nDim; i++) {

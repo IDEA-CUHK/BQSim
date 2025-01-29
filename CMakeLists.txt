@@ -41,6 +41,7 @@ check_submodule_present(taskflow)
 
 add_subdirectory(src)
 add_subdirectory(apps)
+add_subdirectory(cuquantum_test)
 # add_subdirectory(extern/MemoryAllocator.KanameShiki)
 # add_subdirectory(extern/cxxopts)
 # add_subdirectory(extern/taskflow)
