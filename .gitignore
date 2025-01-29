@@ -15,5 +15,5 @@ pad.txt
 plot-cache.py
 scala.sh
 run.sh
-time-per-gate.sh
+time-per-gate.py
 log/
