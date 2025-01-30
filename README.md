@@ -1,33 +1,33 @@
-# BQSim
-BQSim: GPU-accelerated Batch Quantum Circuit Simulation using Decision Diagram
+# BQSim: GPU-accelerated Batch Quantum Circuit Simulation using Decision Diagram
 
-<!-- # Reproducibility of Experiments
-## Environment
-  (a) A Ubuntu 22.04.2 LTS machine with 64 Intel Xeon Gold 6226R CPUs at 2.9 GHz and 256~GB memory capacity.
+This Artifact describes the steps to compile and run `BQSim` on various quantum circuits and provides a performance comparison of `BQSim` against `cuQuantum`, `Qiskit Aer`, and `FlatDD`, reproducing the overall comparison results from Section 4.2. 
 
-  (b) `g++` compiler version 11.4.0.
+The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD`, along with 16 quantum circuits and their corresponding inputs with varying numbers of qubits for evaluation. Running the artifact requires a CUDA-enabled GPU with at least 48~GB of memory, 20~GB of system RAM, and 2 GB of free disk space.
 
-  (c) `cmake` version 3.26.1.
+## Artifact check-list (meta-information)
 
-  (d) `Python` version 3.8.3, `NumPy` version 1.22.4, `seaborn` version 0.13.2, `pandas` version 2.0.3 and `Matplotlib` version 3.7.5.
+* Compilation: GCC 12.3.0, NVCC 12.6, CMake 3.22.1. We provide an automated compilation script.
+* Datasets: 16 quantum circuits in `circuits/`, and the corresponding random circuit inputs.
+* Hardware: CUDA-enabled GPU with 48~GB of memory and 20~GB of system RAM.
+* Metrics: Simulation runtime.
+* Output: Metric data in the console log. 
+* Experiments: We provide automated scripts for running the experiments.
+* Disk space: 2 GB.
+* How much time is needed to prepare workflow (approximately)?: 10 minutes.
+* How much time is needed to complete experiments (approximately)?: All the experiments take approximately four days to complete, as demonstrated in Section 4.2. To reduce runtime, we can evaluate each simulator separately. The fastest simulator, `BQSim`, takes less than 20 minutes, whereas the slowest simulator, `FlatDD`, takes more than two days.
 
-## File Hierarchy
+## Description
 
-  (a) `extern`: It contains all the third-party dependencies (`cxxopts`, `json`, and `taskflow`).
+1. Hardware dependencies: A CUDA-enabled GPU with at least 48~GB of memory, 20~GB of system RAM, and 2~GB of free disk space.
 
-  (b) `include`: It contains the header files.
+2. Software dependencies: Our experiments are conducted on a Ubuntu 22.04.3 LTS machine with the following software dependencies:
 
-  (c) `src`: It contains the source code for the experiments.
+* CUDA 12.6 with cuQuantum SDK.
+* GCC 12.3.0, NVCC 12.6, CMake 3.22.1.
+* libeigen3-dev.
+* Python 3.10.12 with NumPy 1.26.4, Qiskit Aer 0.15.0, and Qiskit 1.2.0.
 
-  (d) `build`: It is a directory for building the executables.
-
-  (e) `log`: It contains output logs from the experiments.
-
-  (f) `apps`: It contains the two main function entrances for `FlatDD` and `DDSIM`.
-
-  (g) `qpp`: It contains the code for `Quantum++`.
-  
-  (h) `circuits`: It contains the 12 quantum circuit files in `OpenQASM` language.
+3. Datasets: The artifact includes 16 `MQT-Bench` quantum circuits along with their corresponding randomly generated inputs.
 
 # Reference
 + [Advanced simulation of quantum computations](https://ieeexplore.ieee.org/abstract/document/8355954)
