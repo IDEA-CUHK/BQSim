@@ -2,22 +2,22 @@
 cd build/apps
 
 echo "---------------------  BQSim  ------------------------"
-./BQSim --ps  --batch_size 256 --file ../../circuits/dnn_n17.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/dnn_n19.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/dnn_n21.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/vqe_n12.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/vqe_n14.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/vqe_n16.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/portfolio_vqe_n16.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/portfolio_vqe_n17.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/portfolio_vqe_n18.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/graph_state_n16.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/graph_state_n18.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/graph_state_n20.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/tsp_n9.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/tsp_n16.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/routing_n6.qasm --num_batch $NumBatches --conversion_type 2
-./BQSim --ps  --batch_size 256 --file ../../circuits/routing_n12.qasm --num_batch $NumBatches --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/dnn_n17.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/dnn_n19.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/dnn_n21.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/vqe_n12.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/vqe_n14.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/vqe_n16.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/portfolio_vqe_n16.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/portfolio_vqe_n17.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/portfolio_vqe_n18.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/graph_state_n16.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/graph_state_n18.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/graph_state_n20.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/tsp_n9.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/tsp_n16.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/routing_n6.qasm --num_batch 200 --conversion_type 2
+./BQSim --ps  --batch_size 256 --file ../../circuits/routing_n12.qasm --num_batch 200 --conversion_type 2
 
 echo "---------------------  FlatDD  ------------------------"
 
@@ -283,22 +283,22 @@ echo "============Execution time in ms: $duration_ms"
 
 echo "---------------------  cuQuantum  ------------------------"
 cd ../cuquantum_test
-./cuquantum dnn 17 256 $NumBatches 0 0
-./cuquantum dnn 19 256 $NumBatches 0 0
-./cuquantum dnn 21 256 $NumBatches 0 0 
-./cuquantum vqe 12 256 $NumBatches 0 0
-./cuquantum vqe 14 256 $NumBatches 0 0
-./cuquantum vqe 16 256 $NumBatches 0 0
-./cuquantum portfolio_vqe 16 256 $NumBatches 0 0
-./cuquantum portfolio_vqe 17 256 $NumBatches 0 0
-./cuquantum portfolio_vqe 18 256 $NumBatches 0 0
-./cuquantum graph_state 16 256 $NumBatches 0 0
-./cuquantum graph_state 18 256 $NumBatches 0 0
-./cuquantum graph_state 20 256 $NumBatches 0 0
-./cuquantum tsp 9 256 $NumBatches 0 0
-./cuquantum tsp 16 256 $NumBatches 0 0
-./cuquantum routing 6 256 $NumBatches 0 0
-./cuquantum routing 12 256 $NumBatches 0 0
+./cuquantum dnn 17 256 200 0 0
+./cuquantum dnn 19 256 200 0 0
+./cuquantum dnn 21 256 200 0 0 
+./cuquantum vqe 12 256 200 0 0
+./cuquantum vqe 14 256 200 0 0
+./cuquantum vqe 16 256 200 0 0
+./cuquantum portfolio_vqe 16 256 200 0 0
+./cuquantum portfolio_vqe 17 256 200 0 0
+./cuquantum portfolio_vqe 18 256 200 0 0
+./cuquantum graph_state 16 256 200 0 0
+./cuquantum graph_state 18 256 200 0 0
+./cuquantum graph_state 20 256 200 0 0
+./cuquantum tsp 9 256 200 0 0
+./cuquantum tsp 16 256 200 0 0
+./cuquantum routing 6 256 200 0 0
+./cuquantum routing 12 256 200 0 0
 
 echo "---------------------  Qiskit Aer  ------------------------"
 cd ../../qiskit_test
