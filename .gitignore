@@ -7,7 +7,6 @@ log/results/node/*.txt
 build/
 build_sh_checkequiv.sh
 input_batch/check_input.py
-log/results/*
 convert.sh
 fuse.sh
 pad.txt
@@ -15,4 +14,3 @@ plot-cache.py
 scala.sh
 run.sh
 time-per-gate.py
-log/outputs/
