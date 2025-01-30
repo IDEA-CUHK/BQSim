@@ -15,4 +15,4 @@ plot-cache.py
 scala.sh
 run.sh
 time-per-gate.py
-# log/
+log/outputs/
