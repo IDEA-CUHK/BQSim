@@ -33,7 +33,7 @@ The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, an
 
 Run the compilation script compile.sh, which will automatically generate the executables for `BQSim` and the baseline simulators (`cuQuantum` and `FlatDD`, `Qiskit Aer` is provided as a Python file).
 
-`\~/BQSim$ ./compile.sh`
+`~/BQSim$ ./compile.sh`
 
 ## Experiment workflow
 
@@ -41,7 +41,29 @@ After compilation, we execute the automated scripts to run `BQSim`, `cuQuantum`,
 
 ## Evaluation and expected results
 
+To execute simulators `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD` on 16 quantum circuits, we run the `overall.sh` script. Since the output may contain many lines, it is redirected to a log file, `overall.txt`, located in `log/outputs/`.
 
+`~/BQSim$ ./compile.sh > log/outputs/overall.txt`
+
+However, this process takes approximately four days. To reduce the runtime, we can evaluate each simulator separately by running individual scripts:
+
+* `BQSim`: `bqsim.sh`
+* `cuQuantum`: `cuquantum.sh`
+* `Qiskit Aer`: `qiskit-aer.sh`
+* `FlatDD`: `flatdd.sh`
+
+The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest simulator, FlatDD, takes more than two days. Each simulator can be run independently with the following commands, and the simulation runtime will be recorded in respective log files:
+
+`~/BQSim$ ./bqsim.sh > log/outputs/bqsim.txt`
+`~/BQSim$ ./cuquantum.sh > log/outputs/cuquantum.txt`
+`~/BQSim$ ./qiskit-aer.sh > log/outputs/qiskit-aer.txt`
+`~/BQSim$ ./flatdd.sh > log/outputs/flatdd.txt`
+
+### How to read the log files:
+
+* `BQSim`: Look for the field `"simulation_time":`.
+* `cuQuantum`: Look for the field `cuQuantum runtime:`.
+* `Qiskit Aer` and `FlatDD`: Look for the field `============Execution time in ms:`.
 
 # Reference
 + [Advanced simulation of quantum computations](https://ieeexplore.ieee.org/abstract/document/8355954)
