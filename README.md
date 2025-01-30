@@ -55,8 +55,11 @@ However, this process takes approximately four days. To reduce the runtime, we c
 The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest simulator, FlatDD, takes more than two days. Each simulator can be run independently with the following commands, and the simulation runtime will be recorded in respective log files:
 
 `~/BQSim$ ./bqsim.sh > log/outputs/bqsim.txt`
+
 `~/BQSim$ ./cuquantum.sh > log/outputs/cuquantum.txt`
+
 `~/BQSim$ ./qiskit-aer.sh > log/outputs/qiskit-aer.txt`
+
 `~/BQSim$ ./flatdd.sh > log/outputs/flatdd.txt`
 
 ### How to read the log files:
