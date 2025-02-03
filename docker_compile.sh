@@ -2,7 +2,7 @@
 
 cd cuquantum_test/qpp/
 cmake -B build
-sudo cmake --build build --target install
+cmake --build build --target install
 
 
 cd ../../
