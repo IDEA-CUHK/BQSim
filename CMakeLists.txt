@@ -33,6 +33,8 @@ macro(CHECK_SUBMODULE_PRESENT modulename)
 endmacro()
 
 find_package(CUDA REQUIRED)
+find_package(OpenMP REQUIRED)
+find_package(Threads REQUIRED)
 
 include_directories(${CUDA_INCLUDE_DIRS})
 message(STATUS "CUDA_INCLUDE_DIRS: " ${CUDA_INCLUDE_DIRS})

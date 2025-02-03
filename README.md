@@ -25,6 +25,7 @@ The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, an
 * CUDA 12.6 with cuQuantum SDK.
 * GCC 12.3.0, NVCC 12.6, CMake 3.22.1.
 * libeigen3-dev.
+* OpenMP.
 * Python 3.10.12 with NumPy 1.26.4, Qiskit Aer 0.15.0, and Qiskit 1.2.0.
 
 3. Datasets: The artifact includes 16 `MQT-Bench` quantum circuits along with their corresponding randomly generated inputs.
