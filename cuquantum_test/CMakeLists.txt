@@ -29,11 +29,13 @@ target_link_libraries(cuquantum ${QPP_LINK_DEPS} libqpp)
 #                        >)
 
 find_library(CUSTATEVEC_LIBRARY
-    NAMES custatevec
-    PATHS ${CUSTATEVEC_ROOT}/lib
+    # NAMES custatevec
+    # PATHS ${CUQUANTUM_ROOT}/lib
     REQUIRED
 )
-include_directories(${CUSTATEVEC_ROOT}/include)
+# message("Found custatevec root: ${CUQUANTUM_ROOT}")
+message("-- Found custatevec library: ${CUSTATEVEC_LIBRARY}")
+# include_directories(${CUQUANTUM_ROOT}/include)
 target_link_libraries(cuquantum ${CUSTATEVEC_LIBRARY})
 # target_link_libraries(cuquantum -lcustatevec)
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
