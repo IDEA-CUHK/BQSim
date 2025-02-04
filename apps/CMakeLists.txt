@@ -21,7 +21,7 @@ macro(ADD_CUSIM_EXECUTABLE appname)
                  ${CMAKE_CURRENT_SOURCE_DIR}/${appname}.cu)
   target_link_libraries(${appname} PRIVATE ${PROJECT_NAME}
                                                            ${ARGN})
-  target_link_libraries(${appname} PRIVATE -lcustatevec)
+  target_link_libraries(${appname} PRIVATE ${CUSTATEVEC_LIBRARY})
 endmacro()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)

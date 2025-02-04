@@ -16,7 +16,8 @@ if(NOT TARGET ${PROJECT_NAME}-dd)
     RealNumber.cpp
     RealNumberUniqueTable.cpp
     UniqueTableStatistics.cpp)
-
+  include_directories(${CUQUANTUM_ROOT}/include)
+  target_link_libraries(${PROJECT_NAME}-dd PUBLIC ${CUSTATEVEC_LIBRARY})
   target_link_libraries(${PROJECT_NAME}-dd PUBLIC kernels)
   target_link_libraries(${PROJECT_NAME}-dd PUBLIC ${PROJECT_NAME})
   add_library(MQT::CoreDD ALIAS ${PROJECT_NAME}-dd)
