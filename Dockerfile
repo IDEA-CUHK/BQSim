@@ -34,6 +34,9 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1
 RUN wget https://developer.download.nvidia.com/compute/cuquantum/redist/cuquantum/linux-x86_64/cuquantum-linux-x86_64-24.11.0.21_cuda12-archive.tar.xz \
     && tar -xf cuquantum-linux-x86_64-24.11.0.21_cuda12-archive.tar.xz -C /usr/local \
     && rm cuquantum-linux-x86_64-24.11.0.21_cuda12-archive.tar.xz
+ENV CUSTATEVEC_ROOT=/usr/local/cuquantum-linux-x86_64-24.11.0.21_cuda12-archive
+ENV LD_LIBRARY_PATH=$CUSTATEVEC_ROOT/lib:$LD_LIBRARY_PATH
+# ENV CPATH=$CUSTATEVEC_ROOT/include:$CPATH
 
 # Install Python 3.10.12
 RUN apt-get update && apt-get install -y \
