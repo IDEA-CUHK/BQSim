@@ -29,7 +29,6 @@ target_link_libraries(cuquantum ${QPP_LINK_DEPS} libqpp)
 #                        >)
 
 find_library(CUSTATEVEC_LIBRARY
-    NAMES custatevec
     REQUIRED
 )
 # message("Found custatevec root: ${CUQUANTUM_ROOT}")

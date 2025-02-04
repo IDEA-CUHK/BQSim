@@ -36,7 +36,7 @@ RUN wget https://developer.download.nvidia.com/compute/cuquantum/redist/cuquantu
     && rm cuquantum-linux-x86_64-24.11.0.21_cuda12-archive.tar.xz
 ENV CUQUANTUM_ROOT=/usr/local/cuquantum-linux-x86_64-24.11.0.21_cuda12-archive
 ENV LD_LIBRARY_PATH=$CUQUANTUM_ROOT/lib:$LD_LIBRARY_PATH
-ENV CUSTATEVEC_LIBRARY=${CUQUANTUM_ROOT}/lib
+ENV CUSTATEVEC_LIBRARY=${CUQUANTUM_ROOT}/lib/libcustatevec.so
 # ENV CPATH=$CUSTATEVEC_ROOT/include:$CPATH
 
 # Install Python 3.10.12
