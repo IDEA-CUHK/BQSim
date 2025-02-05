@@ -18,7 +18,7 @@ The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, an
 
 ## Description
 
-1. Hardware dependencies: A CUDA-enabled GPU with at least 48 GB of memory, 20 GB of system RAM, and 2 GB of free disk space.
+1. Hardware dependencies: An x86 host with a CUDA-enabled GPU (at least 48 GB of memory), 20 GB of system RAM, and 2 GB of free disk space.
 
 2. Software dependencies: Our experiments are conducted on a Ubuntu 22.04.3 LTS machine with the following software dependencies:
 
