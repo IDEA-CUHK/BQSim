@@ -6,7 +6,7 @@ The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, an
 
 ## Artifact check-list (meta-information)
 
-* Compilation: GCC 12.3.0, NVCC 12.6, CMake 3.22.1. We provide an automated compilation script.
+* Compilation: GCC 12.3.0, NVCC 12.6, CMake 3.22.1 (Without Docker container). Alternatively, we also provide a Dockerfile in our artifact. We provide an automated compilation script.
 * Datasets: 16 quantum circuits in `circuits/`, and the corresponding random circuit inputs.
 * Hardware: CUDA-enabled GPU with 48 GB of memory and 20 GB of system RAM.
 * Metrics: Simulation runtime.
@@ -22,19 +22,43 @@ The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, an
 
 2. Software dependencies: Our experiments are conducted on a Ubuntu 22.04.3 LTS machine with the following software dependencies:
 
+**Without Docker**
 * CUDA 12.6 with cuQuantum SDK.
 * GCC 12.3.0, NVCC 12.6, CMake 3.22.1.
 * libeigen3-dev.
 * OpenMP.
 * Python 3.10.12 with NumPy 1.26.4, Qiskit Aer 0.15.0, and Qiskit 1.2.0.
 
+**With Docker**
+* Docker 26.1.3.
+* [NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html). Installation can be verified by running `nvidia-container-cli --version`. Our machine shows the following:
+``
+cli-version: 1.17.4
+lib-version: 1.17.4
+build date: 2025-01-23T10:53+00:00
+build revision: f23e5e55ea27b3680aef363436d4bcf7659e0bfc
+build compiler: x86_64-linux-gnu-gcc-7 7.5.0
+build platform: x86_64
+build flags: -D_GNU_SOURCE -D_FORTIFY_SOURCE=2 -DNDEBUG -std=gnu11 -O2 -g -fdata-sections -ffunction-sections -fplan9-extensions -fstack-protector -fno-strict-aliasing -fvisibility=hidden -Wall -Wextra -Wcast-align -Wpointer-arith -Wmissing-prototypes -Wnonnull -Wwrite-strings -Wlogical-op -Wformat=2 -Wmissing-format-attribute -Winit-self -Wshadow -Wstrict-prototypes -Wunreachable-code -Wconversion -Wsign-conversion -Wno-unknown-warning-option -Wno-format-extra-args -Wno-gnu-alignof-expression -Wl,-zrelro -Wl,-znow -Wl,-zdefs -Wl,--gc-sections
+``
+
 3. Datasets: The artifact includes 16 `MQT-Bench` quantum circuits along with their corresponding randomly generated inputs.
 
 ## Compilation
 
-Run the compilation script compile.sh, which will automatically generate the executables for `BQSim` and the baseline simulators (`cuQuantum` and `FlatDD`, `Qiskit Aer` is provided as a Python file).
+**Without Docker**
+Run the compilation script `compile.sh`, which will automatically generate the executables for `BQSim` and the baseline simulators (`cuQuantum` and `FlatDD`, `Qiskit Aer` is provided as a Python file).
 
 `~/BQSim$ ./compile.sh`
+
+**With Docker**
+Build a docker image `bqsim_image` using `Dockerfile`.  The compilation script `docker_compile.sh` is included in the Dockerfile, so if the Docker image builds successfully, the program should compile without issues. 
+
+`sudo docker build --no-cache -t bqsim_image . `
+
+Run a docker container `bqsim_container` using the image.
+
+`sudo docker run -it --rm --gpus all --name bqsim_container  bqsim_image:latest`
 
 ## Experiment workflow
 
@@ -42,7 +66,7 @@ After compilation, we execute the automated scripts to run `BQSim`, `cuQuantum`,
 
 ## Evaluation and expected results
 
-To execute simulators `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD` on 16 quantum circuits, we run the `overall.sh` script. Since the output may contain many lines, it is redirected to a log file, `overall.txt`, located in `log/outputs/`.
+To execute simulators `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD` on 16 quantum circuits, we run the `overall.sh` script. Since the output may contain many lines, it is redirected to a log file, `overall.txt`, located in `log/outputs/`. The same process applies both inside and outside the docker container.
 
 `~/BQSim$ ./compile.sh > log/outputs/overall.txt`
 
