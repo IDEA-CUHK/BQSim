@@ -78,7 +78,13 @@ After compilation, we execute the automated scripts to run `BQSim`, `cuQuantum`,
 
 To execute simulators `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD` on 16 quantum circuits, we run the `overall.sh` script. Since the output may contain many lines, it is redirected to a log file, `overall.txt`, located in `log/outputs/`. Both inside and outside the Docker container, the same general steps apply here.
 
-`~/BQSim$ ./compile.sh > log/outputs/overall.txt`
+**Without Docker**
+
+`~/BQSim$ ./overall.sh > log/outputs/overall.txt`
+
+**With Docker**
+
+`/workspace/BQSim# ./overall.sh > log/outputs/overall.txt`
 
 However, this process takes approximately four days. To reduce the runtime, we can evaluate each simulator separately by running individual scripts:
 
@@ -89,6 +95,8 @@ However, this process takes approximately four days. To reduce the runtime, we c
 
 The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest simulator, FlatDD, takes more than two days. Each simulator can be run independently with the following commands, and the simulation runtime will be recorded in respective log files:
 
+**Without Docker**
+
 `~/BQSim$ ./bqsim.sh > log/outputs/bqsim.txt`
 
 `~/BQSim$ ./cuquantum.sh > log/outputs/cuquantum.txt`
@@ -96,6 +104,16 @@ The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest si
 `~/BQSim$ ./qiskit-aer.sh > log/outputs/qiskit-aer.txt`
 
 `~/BQSim$ ./flatdd.sh > log/outputs/flatdd.txt`
+
+**With Docker**
+
+`/workspace/BQSim#$ ./bqsim.sh > log/outputs/bqsim.txt`
+
+`/workspace/BQSim#$ ./cuquantum.sh > log/outputs/cuquantum.txt`
+
+`/workspace/BQSim#$ ./qiskit-aer.sh > log/outputs/qiskit-aer.txt`
+
+`/workspace/BQSim#$ ./flatdd.sh > log/outputs/flatdd.txt`
 
 ### How to read the log files:
 
