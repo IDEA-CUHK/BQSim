@@ -58,7 +58,7 @@ RUN wget https://bootstrap.pypa.io/get-pip.py \
 RUN python3.10 -m pip install --upgrade pip \
     && python3.10 -m pip install \
     numpy==1.26.4 \
-    qiskit-aer==0.15.0 \
+    qiskit-aer-gpu==0.15.0 \
     qiskit==1.2.0
 
 # Set the default Python version to 3.10
