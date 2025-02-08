@@ -109,13 +109,13 @@ The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest si
 
 **With Docker**
 
-`/workspace/BQSim#$ ./bqsim.sh > log/outputs/bqsim.txt`
+`/workspace/BQSim# ./bqsim.sh > log/outputs/bqsim.txt`
 
-`/workspace/BQSim#$ ./cuquantum.sh > log/outputs/cuquantum.txt`
+`/workspace/BQSim# ./cuquantum.sh > log/outputs/cuquantum.txt`
 
-`/workspace/BQSim#$ ./qiskit-aer.sh > log/outputs/qiskit-aer.txt`
+`/workspace/BQSim# ./qiskit-aer.sh > log/outputs/qiskit-aer.txt`
 
-`/workspace/BQSim#$ ./flatdd.sh > log/outputs/flatdd.txt`
+`/workspace/BQSim# ./flatdd.sh > log/outputs/flatdd.txt`
 
 #### How to read the log files:
 
@@ -129,7 +129,7 @@ The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest si
 
 We export the fused gates obtained from BQCS-aware gate fusion and Qiskit Aer's gate fusion by running script `export_fused_gates.sh` in the Docker container.
 
-`/workspace/BQSim#$ ./export_fused_gates.sh`
+`/workspace/BQSim# ./export_fused_gates.sh`
 
 This script will export the fused gates in `log/fused_gates/`, where some pre-exported fused gates are already provided.  Due to memory and time constraints, we did not export all the fused gates analyzed in Section 4.5. You may modify `export_fused_gates.sh` to export additional gates as needed.
 
@@ -137,7 +137,7 @@ This script will export the fused gates in `log/fused_gates/`, where some pre-ex
 
 We run cuQuantum with both our BQCS-aware gate-fusion (i.e., `cuQuantum+B`) and Qiskit Aer’s gate-fusion (i.e., `cuQuantum+Q`) algorithms by executing script `cuquantum_plus_bq.sh` in the Docker container.
 
-`/workspace/BQSim#$ ./cuquantum_plus_bq.sh`
+`/workspace/BQSim# ./cuquantum_plus_bq.sh`
 
 
 # Reference
