@@ -76,6 +76,8 @@ After compilation, we execute the automated scripts to run `BQSim`, `cuQuantum`,
 
 ## Evaluation and expected results
 
+### Overall comparison
+
 To execute simulators `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD` on 16 quantum circuits, we run the `overall.sh` script. Since the output may contain many lines, it is redirected to a log file, `overall.txt`, located in `log/outputs/`. Both inside and outside the Docker container, the same general steps apply here.
 
 **Without Docker**
@@ -115,11 +117,28 @@ The fastest simulator, BQSim, takes less than 20 minutes, whereas the slowest si
 
 `/workspace/BQSim#$ ./flatdd.sh > log/outputs/flatdd.txt`
 
-### How to read the log files:
+#### How to read the log files:
 
 * `BQSim`: Look for the field `"simulation_time":`.
 * `cuQuantum`: Look for the field `cuQuantum runtime:`.
 * `Qiskit Aer` and `FlatDD`: Look for the field `============Execution time in ms:`.
+
+### Evaluation of Task Graph-based Execution
+
+**Exporting fused gates in Docker**
+
+We export the fused gates obtained from BQCS-aware gate fusion and Qiskit Aer's gate fusion by running script `export_fused_gates.sh` in the Docker container.
+
+`/workspace/BQSim#$ ./export_fused_gates.sh`
+
+This script will export the fused gates in `log/fused_gates/`, where some pre-exported fused gates are already provided.  Due to memory and time constraints, we did not export all the fused gates analyzed in Section 4.5. You may modify `export_fused_gates.sh` to export additional gates as needed.
+
+**Running cuQuantum with fused gates in Docker**
+
+We run cuQuantum with both our BQCS-aware gate-fusion (i.e., `cuQuantum+B`) and Qiskit Aer’s gate-fusion (i.e., `cuQuantum+Q`) algorithms by executing script `cuquantum_plus_bq.sh` in the Docker container.
+
+`/workspace/BQSim#$ ./cuquantum_plus_bq.sh`
+
 
 # Reference
 + [Advanced simulation of quantum computations](https://ieeexplore.ieee.org/abstract/document/8355954)
