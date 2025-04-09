@@ -1,5 +1,7 @@
 # BQSim: GPU-accelerated Batch Quantum Circuit Simulation using Decision Diagram
 
+![BQSim](bqsim.png)
+
 This Artifact describes the steps to compile and run `BQSim` on various quantum circuits and provides a performance comparison of `BQSim` against `cuQuantum`, `Qiskit Aer`, and `FlatDD`, reproducing the runtime results from Section 4.2 and Section 4.5. 
 
 The artifact includes the source code for `BQSim`, `cuQuantum`, `Qiskit Aer`, and `FlatDD`, along with 16 quantum circuits and their corresponding inputs with varying numbers of qubits for evaluation. Running the artifact requires a CUDA-enabled GPU with at least 48 GB of memory, 20 GB of system RAM, and 20 GB of free disk space.
