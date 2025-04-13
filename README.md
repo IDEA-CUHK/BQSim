@@ -136,5 +136,6 @@ We run cuQuantum with both our BQCS-aware gate-fusion (i.e., `cuQuantum+B`) and 
 
 
 # Reference
-+ [Advanced simulation of quantum computations](https://ieeexplore.ieee.org/abstract/document/8355954)
-+ [Quantum++: A modern C++ quantum computing library](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0208073)
++ [cuQuantum SDK: A High-Performance Library for Accelerating Quantum Computing Simulations](https://docs.nvidia.com/cuda/cuquantum/latest/index.html)
++ [Qiskit Aer documentation](https://qiskit.github.io/qiskit-aer/)
++ [FlatDD: A High-Performance Quantum Circuit Simulator using Decision Diagram and Flat Array](https://dl.acm.org/doi/pdf/10.1145/3673038.3673073)
