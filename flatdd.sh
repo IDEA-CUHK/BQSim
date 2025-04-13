@@ -1,4 +1,4 @@
-# !/usr/bin/bash
+#!/bin/bash
 cd build/apps
 echo "============Simulating DNN n=17"
 start_time=$(date +%s%3N) 
